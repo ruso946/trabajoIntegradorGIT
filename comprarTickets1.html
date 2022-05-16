@@ -58,19 +58,19 @@
       -->
       
       <div id="compra tickets" class="d-flex justify-content-center bg-light mb-0">
-        <div class="btn btn-outline-primary m-1">
+        <div class="btn btn-outline-primary m-1" id="Estudiante">
           <p class="h5 text-dark">Estudiante</p>
           <p class="text-dark">Tienen un descuento</p>
           <p class="text-dark">80%</p>
           <p class="text-muted"><small>*presentar documentación</small></p>
         </div>
-        <div class="btn btn-outline-success m-1">
+        <div class="btn btn-outline-success m-1" id="Trainee">
           <p class="h5 text-dark">Trainee</p>
           <p class="text-dark">Tienen un descuento</p>
           <p class="text-dark">50%</p>
           <p class="text-muted"><small>*presentar documentación</small></p>
         </div>
-        <div class="btn btn-outline-warning m-1">
+        <div class="btn btn-outline-warning m-1" id="Junior">
           <p class="h5 text-dark">Junior</p>
           <p class="text-dark">Tienen un descuento</p>
           <p class="text-dark">15%</p>
@@ -159,8 +159,31 @@
             
             document.querySelector("#total").value="Total a pagar: " + String(total);
             }
+        
+        function selecDescEstudiante () {
+          document.querySelector("#selectorCategoria").value = "80"
+          //console.log("presiono Estudiante")
+        }
+
+        function selecDescTrainee () {
+          document.querySelector("#selectorCategoria").value = "50"
+          //console.log("presiono Trainee")
+        }
+
+        function selecDescJunior () {
+          document.querySelector("#selectorCategoria").value = "15"
+          //console.log("presiono Junior")
+        }
+
+        
         botonResumen = document.querySelector("#resumen");
         botonResumen.addEventListener('click', calcular);
+        botonEstudiante = document.querySelector("#Estudiante");
+        botonEstudiante.addEventListener('click', selecDescEstudiante);
+        botonTrainee = document.querySelector("#Trainee");
+        botonTrainee.addEventListener('click', selecDescTrainee);
+        botonJunior = document.querySelector("#Junior");
+        botonJunior.addEventListener('click', selecDescJunior);
         
     
     </script>
